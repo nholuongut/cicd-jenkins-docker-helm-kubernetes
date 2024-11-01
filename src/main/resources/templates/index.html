@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/>
+    <link data-th-href="@{/css/main.css?{id}(id=${timestamp})}" rel="stylesheet">
+    <title>Kubernetes Spring Boot Application</title>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="#">Just another springboot application from Dele Onabowu</div></a>
+</nav>
+
+<main role="main" class="container">
+    <div class="starter-template">
+        <h1 th:text="${title}">Default title.</h1>
+        <p th:text="${msg}">Default text.</p>
+        <p>This end to end CI/CD pipeline has the following workflow. Code is pushed to Github which triggers a webhook and Jenkins pipeline. The code is checked out into Jenkins, Maven builds the artifacts, A Docker image is built from the *.jar file and pushed to our ECR repository. Our Springboot application is deployed into our Kubernetes cluster using a Helm Chart. </p>
+    </div>
+</main>
+
+<script data-th-src="@{/js/main.js}"></script>
+</body>
+
+</html>
